@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Forms</title>
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="mystyle.css" />	
+    <script src="modernizr_forms.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js"></script>
+
+</head>
+<body>
+
+<form action="http://www.blakestiller.com/formdata.php" entype="multipart/form-data" class="group"  method="get" autocomplete="on" name="theform" id="myform" target="_blank">
+
+	<ol>
+    <h1> Form to upload File</h1>
+		<li class="group">
+			<label for="namefield">Name</label>
+			<input type="text" name="name" id="namefield" pattern="[A-Za-z ]+, [A-Za-z ]+" title="Please enter your name" autofocus placeholder="Last, First" required/>
+		</li>
+
+		<li class="group">
+			<label for="emailfield">Email</label>
+			<input type="email" name="email" id="emailfield" title="Please enter your email" required />
+		</li>
+
+		<li class="group">
+			<label for="filefield">Upload Image </label>
+			<input type="file" name="uploads" id="filefield" title="Select File to upload" required accept="image/*" />
+		</li>
+
+	</ol>
+<button type="submit"> Send </button>
+<button type="reset"> Reset </button>
+</form> 
+
+<script>
+	$(document).ready(function() {
+		$("#myform").validate(); //validate
+	}); //document ready
+	
+	
+</script>
+
+</body>
+</html>

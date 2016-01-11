@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Multiple Field Types</title>
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="mystyle.css" />	
+    <script src="modernizr_forms.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js"></script>
+    
+</head>
+<body>
+<form action="http://www.blakestiller.com/formdata.php" class="group"  method="post" autocomplete="on" name="myform" id="myform" target="_blank">
+	<ol>
+		<li class="group">
+			<label for="countyfield">County</label>
+			<input type="text" name="county" id="countyfield"  required placeholder="Canada" autocomplete="on"/>
+		</li>
+		<li class="group">
+			<label for="emailfield">Email</label>
+			<input type="email" name="email" id="emailfield" required autocomplete="on"/>
+		</li>
+
+		<li class="group">
+			<label for="websitefield">Website</label>
+			<input type="url" name="website " id="websitefield" required autocomplete="on"/>
+		</li>
+
+		<li class="group">
+			<label for="agefield">Age</label>
+			<input type="number" name="age" id="agefield" required autocomplete="on"/>
+		</li>
+
+		<li class="group">
+			<label for="datetimefield">Date &amp; Time</label>
+			<input type="datetime" name="datetime" id="datefield" required/>
+		</li>
+
+	</ol>
+<button type="submit">send</button>
+<button type="reset">reset</button>
+</form>
+
+<script>
+	$(document).ready(function() {
+		$("#myform").validate(); //validate
+	}); //document ready
+	
+	
+</script>
+</body>
+</html>

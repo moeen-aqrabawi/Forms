@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Fundemental project - Trios Form </title>
+	<link rel="stylesheet" href="mystyle.css" />
+	<script src="modernizr_forms.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js"></script>
+
+
+
+</head>
+<body>
+ <form action="http://www.blakestiller.com/formdata.php" class="group"  method="POST" autocomplete="on" class="group" name="theform" id="myform" target="_blank">
+
+	<fieldset id="login" title="Trios Student's Login details">
+		<legend>Trios Student Login details</legend>
+		<span id="formerror" class="error"></span>
+		<ol>
+			<li>
+				<label for="myname"> Name *</label>
+				<input type="text" name="myname" id="myname" title="Please enter your name" pattern="[A-Za-z ]+, [A-Za-z ]+" autofocus required placeholder="Last, First" />
+			</li>
+			<li>
+				<label for="myemail"> Email *</label>
+				<input type="email" name="myemail" required id="myemail" autocomplete="off" />
+			</li>
+			<li>
+				<label for="mypassword">Password</label>
+				<input type="password" name="mypassword" id="mypassword" />
+			</li>
+			<li>
+				<label for="mypasswordconf">Password</label>
+				<input type="password" name="mypasswordconf" id="mypasswordconf" />
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset id="other" class="hidden" title="Other Info">
+		<legend>Other</legend>
+		<ol>
+			<li>
+				<label for="myurl">Website</label>
+				<input type="url" name="myurl" id="myurl" />
+			</li>
+			<li>
+				<label for="mytelephone">Telephone</label>
+				<input type="tel" name="mytelephone" id="mytelephone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="xxx-xxx-xxxx"/>
+			</li>
+			<li class="singleline">
+				<input type="checkbox" id="subscribeitem" name="subscribe" CHECKED value="yes" />
+				<label for="subscribeitem">Subscribe to our mailing list?</label>
+			</li>
+			<li>
+				<label for="reference">How did you hear about us?</label>
+				<select name="reference" id="reference">
+					<option>Choose...</option>
+					<option value="BlakeToldMe">Blake Told Me</option>
+					<option value="MoeenToldMe">Moeen Told Me</option>
+					<option value="LinkedIn">LinkedIn</option>
+					<option value="LinkedOut">LinkedOu</option>
+					<option value="Indeed.ca">Indeed.ca</option>
+					<option value="Monster.ca">Monster.ca</option>
+					<option value="friend">A friend</option>
+					<option value="facebook">Facebook</option>
+					<option value="twitter">Twitter</option>
+				</select>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset id="comments"  class="hidden" title="Comments">
+	<legend>Comments</legend>
+		<ol>
+			<li>
+				<div class="grouphead">Request Type</div>
+				<ol>
+					<li>
+						<input type="radio" name="requesttype" value="question" id="questionitem" />
+						<label for="questionitem">Question</label>
+					</li>
+					<li>
+						<input type="radio" name="requesttype" value="comment" id="commentitem" />
+						<label for="commentitem">Comment</label>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<label for="mycomments">Comment</label>
+				<textarea name="mycomments" id="mycomments"></textarea>
+			</li>
+		</ol>
+        
+		<button type="submit">send</button>
+        <button type="reset">reset</button>
+	</fieldset>
+</form>
+<script>
+	$(document).ready(function() {
+		$("#myform").validate({
+				"rules" : {
+					"mypassword": {
+						"minlength" : 6,
+						"required" : true },
+					"mypasswordconf": {
+						"equalTo" : "#mypassword"}
+				} //rules
+		}); //validate
+	}); //document ready
+	
+	
+</script>
+
+
+
+</body>
+</html>
